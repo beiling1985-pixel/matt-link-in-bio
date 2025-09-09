@@ -225,5 +225,45 @@
       a.addEventListener('click',()=>{ try{ gtag('event','call_click'); }catch(e){} });
     });
   </script>
+<script>
+  // Replace with your real endpoint:
+  const FORMSPREE_ENDPOINT = "https://formspree.io/f/abcd1234";
+
+  const form = document.getElementById('quote-form');
+  const submitBtn = document.getElementById('quote-submit');
+  const statusEl = document.getElementById('quote-status');
+
+  if (form) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      // Simple honeypot (if you kept the _gotcha input)
+      const trap = form.querySelector('[name="_gotcha"]');
+      if (trap && trap.value) return;
+
+      statusEl && (statusEl.textContent = 'Sending…');
+      submitBtn && (submitBtn.disabled = true);
+
+      try {
+        const res = await fetch(FORMSPREE_ENDPOINT, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (res.ok) {
+          statusEl && (statusEl.textContent = "Sent! I'll text you shortly.");
+          form.reset();
+        } else {
+          statusEl && (statusEl.textContent = 'Something went wrong. Try again or text me.');
+        }
+      } catch {
+        statusEl && (statusEl.textContent = 'Network error. Try again or text me.');
+      } finally {
+        submitBtn && (submitBtn.disabled = false);
+      }
+    });
+  }
+</script>
 </body>
 </html>
