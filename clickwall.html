@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Quick Check-In → Overview</title>
+  <meta name="description" content="Enter your details to access the Globe Life recorded overview.">
+  <style>
+    :root { --cta:#319b41; }
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; background:#f7f7f8; margin:0; }
+    .wrap { max-width: 520px; margin: 6vh auto; background:#fff; border-radius:16px; padding:24px; box-shadow: 0 10px 25px rgba(0,0,0,.06); }
+    h1 { font-size: 22px; margin: 0 0 8px; }
+    p { color:#555; margin: 0 0 16px; }
+    label { display:block; font-size:14px; margin:12px 0 6px; }
+    input { width:100%; padding:12px; border:1px solid #ddd; border-radius:10px; font-size:16px; }
+    button { margin-top:16px; width:100%; padding:14px; font-size:16px; font-weight:600; border:0; border-radius:12px; cursor:pointer; background:var(--cta); color:#fff; }
+    .tiny { font-size:12px; color:#777; margin-top:10px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Quick check-in, then you’re in</h1>
+    <p>Give your details so we can track your spot. You’ll go straight to the recorded overview.</p>
+
+    <form id="gate">
+      <label>Full name *</label>
+      <input id="name" required placeholder="Jane Doe" />
+
+      <label>Email *</label>
+      <input id="email" type="email" required placeholder="jane@example.com" />
+
+      <label>Phone</label>
+      <input id="phone" placeholder="555-123-4567" />
+
+      <label>State</label>
+      <input id="state" placeholder="OH, GA, WI, MI, TN..." />
+
+      <input type="hidden" id="source" value="Clickwall" />
+      <input type="hidden" id="utm" />
+
+      <button id="go" type="submit">Go to Overview</button>
+      <div class="tiny">By continuing you agree to be contacted about this opportunity.</div>
+    </form>
+  </div>
+
+  <script>
+    // ===== CONFIG =====
+    const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzkpogWt2volpJh5ducLZX9BI9yYuX6FR-3u3p4LZZrJhFhDI9m2ymGs9LHTN9o00b/exec';
+    const DEMIO_URL = 'https://my.demio.com/ref/yMiaFmyZt7hmyG9j';
+    // ==================
+
+    // Collect UTM params if present
+    const params = new URLSearchParams(location.search);
+    const utm = ['utm_source','utm_medium','utm_campaign','utm_term','utm_content']
+      .map(k => params.get(k) ? `${k}=${params.get(k)}` : null)
+      .filter(Boolean).join('&');
+    document.getElementById('utm').value = utm;
+
+    document.getElementById('gate').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = document.getElementById('go');
+      btn.disabled = true; btn.textContent = 'Sending…';
+
+      const payload = {
+        name:  document.getElementById('name').value.trim(),
+        email: document.getElementById('email').value.trim(),
+        phone: document.getElementById('phone').value.trim(),
+        state: document.getElementById('state').value.trim(),
+        source: document.getElementById('source').value,
+        utm: document.getElementById('utm').value
+      };
+
+      try {
+        await fetch(APPS_SCRIPT_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+      } catch (err) {
+        console.warn('Log error (non-blocking):', err);
+      }
+
+      const jump = utm ? `${DEMIO_URL}?${utm}` : DEMIO_URL;
+      window.location.href = jump;
+    });
+  </script>
+</body>
+</html>
