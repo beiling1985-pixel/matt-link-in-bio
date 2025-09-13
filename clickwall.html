@@ -26,14 +26,8 @@
       <label>Full name *</label>
       <input id="name" required placeholder="Jane Doe" />
 
-      <label>Email *</label>
-      <input id="email" type="email" required placeholder="jane@example.com" />
-
-      <label>Phone</label>
-      <input id="phone" placeholder="555-123-4567" />
-
-      <label>State</label>
-      <input id="state" placeholder="OH, GA, WI, MI, TN..." />
+      <!-- We only require the visitor's name on this gate.  The email, phone, and state fields
+           have been removed to reduce friction.  Those values will be collected on the Demio page. -->
 
       <input type="hidden" id="source" value="Clickwall" />
       <input type="hidden" id="utm" />
@@ -64,11 +58,14 @@
       const btn = document.getElementById('go');
       btn.disabled = true; btn.textContent = 'Sending…';
 
+      // Build the payload.  Only the name is collected on this page.  If the optional
+      // fields (email, phone, state) are present in the DOM, capture them; otherwise
+      // default to an empty string.  This keeps the Apps Script logging compatible.
       const payload = {
         name:  document.getElementById('name').value.trim(),
-        email: document.getElementById('email').value.trim(),
-        phone: document.getElementById('phone').value.trim(),
-        state: document.getElementById('state').value.trim(),
+        email: document.getElementById('email') ? document.getElementById('email').value.trim() : '',
+        phone: document.getElementById('phone') ? document.getElementById('phone').value.trim() : '',
+        state: document.getElementById('state') ? document.getElementById('state').value.trim() : '',
         source: document.getElementById('source').value,
         utm: document.getElementById('utm').value
       };
@@ -84,15 +81,10 @@
         console.warn('Log error (non-blocking):', err);
       }
 
-      // Build a Demio 1-Click registration link using the visitor's first name and email.
-      // Demio supports prefilling only the first name and email via path segments.
-      // We extract the first word of the full name (before any space) as the first name.
-      const firstName = payload.name.split(' ')[0] || '';
-      // Encode values to ensure special characters don't break the URL
-      const demioPrefill = `${DEMIO_URL}/${encodeURIComponent(firstName)}/${encodeURIComponent(payload.email)}`;
-      // Append UTM parameters if present
-      const jump = utm ? `${demioPrefill}?${utm}` : demioPrefill;
-      // Redirect the visitor to the Demio page with pre-filled fields
+      // Redirect the visitor to the Demio overview.  Since we're no longer collecting
+      // the email address here, we skip the 1-Click registration format and simply
+      // append any UTM parameters to the Demio URL.
+      const jump = utm ? `${DEMIO_URL}?${utm}` : DEMIO_URL;
       window.location.href = jump;
     });
   </script>
