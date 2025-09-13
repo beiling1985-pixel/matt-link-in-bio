@@ -84,7 +84,15 @@
         console.warn('Log error (non-blocking):', err);
       }
 
-      const jump = utm ? `${DEMIO_URL}?${utm}` : DEMIO_URL;
+      // Build a Demio 1-Click registration link using the visitor's first name and email.
+      // Demio supports prefilling only the first name and email via path segments.
+      // We extract the first word of the full name (before any space) as the first name.
+      const firstName = payload.name.split(' ')[0] || '';
+      // Encode values to ensure special characters don't break the URL
+      const demioPrefill = `${DEMIO_URL}/${encodeURIComponent(firstName)}/${encodeURIComponent(payload.email)}`;
+      // Append UTM parameters if present
+      const jump = utm ? `${demioPrefill}?${utm}` : demioPrefill;
+      // Redirect the visitor to the Demio page with pre-filled fields
       window.location.href = jump;
     });
   </script>
