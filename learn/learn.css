@@ -1,0 +1,37 @@
+:root{--navy:#0b2440;--navy-2:#123257;--gold:#d7a34f;--sky:#eef3f8;--ink:#14202e;--muted:#4c5b6b;--paper:#ffffff;--green:#1f7a3a;--line:#d6dee8}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:18px/1.7 "Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif}
+a{color:var(--navy-2)}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.top{background:var(--navy);color:#dbe5f0;padding:16px 20px}
+.top .in{max-width:720px;margin:0 auto;display:flex;align-items:center;gap:12px;font-weight:700;font-size:15px}
+.top img{width:40px;height:40px;border-radius:50%;object-fit:cover;border:2px solid var(--gold)}
+.top a{color:#fff;text-decoration:none}
+article,.index{max-width:720px;margin:0 auto;padding:36px 20px 24px}
+.crumbs{font-size:14px;color:var(--muted);margin:0 0 14px}
+h1{font-family:Bitter,Georgia,serif;font-weight:800;font-size:clamp(30px,5vw,42px);line-height:1.15;margin:0 0 12px}
+.byline{font-size:15px;color:var(--muted);margin:0 0 28px}
+h2{font-family:Bitter,Georgia,serif;font-size:25px;line-height:1.25;margin:38px 0 10px}
+h3{font-size:19px;margin:26px 0 6px}
+p,li{max-width:64ch}
+ul,ol{padding-left:22px}
+table{border-collapse:collapse;width:100%;margin:18px 0;font-size:16px}
+th,td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}
+th{background:var(--sky)}
+.short{background:var(--sky);border-left:4px solid var(--gold);padding:16px 18px;margin:0 0 26px;border-radius:0 10px 10px 0}
+.short p{margin:0}
+.cta{background:var(--navy);color:#fff;border-radius:16px;padding:24px;margin:40px 0 10px}
+.cta h2{color:#fff;margin:0 0 8px}
+.cta p{color:#dbe5f0;margin:0 0 16px}
+.cta a.btn{display:inline-block;background:var(--green);color:#fff;font-weight:700;text-decoration:none;padding:14px 20px;border-radius:12px}
+.more{border-top:1px solid var(--line);margin-top:34px;padding-top:8px}
+.more ul{list-style:none;padding:0}
+.more li{margin:8px 0}
+.index ul{list-style:none;padding:0}
+.index li{border-bottom:1px solid var(--line);padding:16px 0}
+.index li a{font-weight:700;font-size:20px}
+.index li p{margin:4px 0 0;color:var(--muted)}
+footer{background:var(--navy);color:#b8c6d6;font-size:13px;line-height:1.55;padding:24px 20px 36px;margin-top:40px}
+footer .in{max-width:720px;margin:0 auto}
+footer a{color:#fff}
