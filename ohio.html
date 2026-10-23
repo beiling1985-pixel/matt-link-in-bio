@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Living Benefits Coverage for Ohio Homeowners | Matt Beiling</title>
+<meta name="description" content="Ohio homeowners: see if you qualify for life insurance with living benefits that can help with your mortgage and bills if you get seriously ill. Licensed agent Matt Beiling, Medina, Ohio.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@600;800&family=Public+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0b2440;--navy-2:#123257;--gold:#d7a34f;--gold-soft:#f3e3c4;--sky:#eef3f8;--ink:#14202e;--muted:#4c5b6b;--paper:#ffffff;--green:#1f7a3a;--error:#b3261e;--line:#d6dee8}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--sky);color:var(--ink);font:17px/1.6 "Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif}
+a{color:var(--navy-2)}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+
+.hero{background:var(--navy);color:#fff;padding:28px 0 0;position:relative;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:start}
+.brand{display:flex;align-items:center;gap:12px;font-weight:700;font-size:15px;color:#dbe5f0;margin-bottom:36px}
+.brand img{width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid var(--gold)}
+.roof{display:block;width:150px;height:auto;margin:0 0 18px}
+.roof path{fill:none;stroke:var(--gold);stroke-width:7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:420;stroke-dashoffset:420;animation:draw 1.4s .2s ease-out forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+@media (prefers-reduced-motion:reduce){.roof path{animation:none;stroke-dashoffset:0}}
+h1{font-family:Bitter,Georgia,serif;font-weight:800;font-size:clamp(34px,5.2vw,54px);line-height:1.08;margin:0 0 18px;letter-spacing:-.01em;max-width:15ch}
+.lede{font-size:19px;color:#dbe5f0;max-width:34em;margin:0 0 26px}
+.points{list-style:none;padding:0;margin:0 0 40px;display:grid;gap:12px;max-width:34em}
+.points li{padding-left:30px;position:relative;color:#eef3f8}
+.points li:before{content:"";position:absolute;left:0;top:.55em;width:16px;height:9px;border-left:3px solid var(--gold);border-bottom:3px solid var(--gold);transform:rotate(-45deg)}
+
+.form-card{background:var(--paper);color:var(--ink);border-radius:18px 18px 0 0;padding:28px 26px 30px;box-shadow:0 -6px 40px #0005;align-self:end}
+.form-card h2{font-family:Bitter,Georgia,serif;font-size:26px;line-height:1.2;margin:0 0 6px}
+.form-card .sub{color:var(--muted);font-size:15px;margin:0 0 20px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+label.field{display:block;font-weight:600;font-size:15px;margin-bottom:14px}
+label.field span.opt{font-weight:400;color:var(--muted)}
+input[type=text],input[type=tel],input[type=email]{display:block;width:100%;margin-top:5px;padding:13px 12px;font:inherit;border:1.5px solid var(--line);border-radius:10px;background:#fff;color:var(--ink)}
+input:focus{border-color:var(--navy-2)}
+fieldset{border:0;padding:0;margin:4px 0 16px}
+legend{font-weight:600;font-size:15px;margin-bottom:8px}
+.choice{display:flex;gap:10px;align-items:flex-start;padding:12px;border:1.5px solid var(--line);border-radius:10px;margin-bottom:8px;cursor:pointer;font-size:15px;line-height:1.4}
+.choice:has(input:checked){border-color:var(--gold);background:#fdf8ef}
+.choice input{margin-top:3px;accent-color:var(--navy)}
+.choice b{display:block;font-size:16px}
+.consent{display:flex;gap:10px;align-items:flex-start;font-size:12.5px;line-height:1.45;color:var(--muted);margin:6px 0 18px}
+.consent input{margin-top:3px;width:18px;height:18px;flex:none;accent-color:var(--navy)}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+button{width:100%;padding:16px;font:700 18px/1 "Public Sans",sans-serif;background:var(--green);color:#fff;border:0;border-radius:12px;cursor:pointer}
+button[disabled]{opacity:.65;cursor:progress}
+.errors{display:none;background:#fdecea;color:var(--error);border-radius:10px;padding:12px 14px;font-size:15px;margin-bottom:14px}
+.errors.on{display:block}
+.errors ul{margin:0;padding-left:18px}
+.done{display:none;text-align:left}
+.done.on{display:block}
+.done h2{color:var(--green)}
+.privacy-note{font-size:12.5px;color:var(--muted);margin:12px 0 0;text-align:center}
+
+.section{padding:56px 0}
+.section h2{font-family:Bitter,Georgia,serif;font-size:30px;line-height:1.2;margin:0 0 22px}
+.steps{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(3,1fr);gap:28px;counter-reset:step}
+.steps li{counter-increment:step;padding-top:52px;position:relative;max-width:30ch}
+.steps li:before{content:counter(step);position:absolute;top:0;left:0;width:38px;height:38px;border-radius:50%;background:var(--navy);color:var(--gold);font:800 18px/38px Bitter,serif;text-align:center}
+.steps b{display:block;font-size:18px;margin-bottom:4px}
+.explain{background:var(--paper)}
+.explain-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px}
+.explain p{margin:0 0 14px;max-width:36em}
+.about{display:grid;grid-template-columns:120px 1fr;gap:24px;align-items:center}
+.about img{width:120px;height:120px;border-radius:50%;object-fit:cover;border:3px solid var(--gold)}
+.about p{margin:0 0 8px;max-width:38em}
+footer{background:var(--navy);color:#b8c6d6;font-size:13px;line-height:1.55;padding:28px 0 40px}
+footer a{color:#fff}
+footer p{margin:0 0 10px;max-width:70em}
+
+@media (max-width:860px){
+  .hero-grid{grid-template-columns:1fr;gap:8px}
+  .brand{margin-bottom:24px}
+  .points{margin-bottom:28px}
+  .form-card{border-radius:18px 18px 0 0;margin:0 -20px;padding:24px 20px 28px}
+  .steps,.explain-grid{grid-template-columns:1fr;gap:22px}
+  .about{grid-template-columns:1fr;gap:14px}
+}
+@media (max-width:420px){.row{grid-template-columns:1fr;gap:0}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="brand"><img src="matt-original.jpg?v=5" alt="">Matt Beiling, licensed agent, Beiling Agency in Medina, Ohio</div>
+      <svg class="roof" viewBox="0 0 160 70" aria-hidden="true"><path d="M8 62 L80 10 L152 62 M118 37 V14 H134 V48"/></svg>
+      <h1>If you got sick, could you still pay the mortgage?</h1>
+      <p class="lede">Life insurance with living benefits can pay part of your coverage while you're still alive if you're diagnosed with a serious illness, so the house payment and bills keep getting paid.</p>
+      <ul class="points">
+        <li>Built for Ohio homeowners and their families</li>
+        <li>Quotes from several carriers, not just one company</li>
+        <li>Many plans need no medical exam, depending on age and health</li>
+        <li>A 15-minute phone call. No pressure to buy.</li>
+      </ul>
+    </div>
+
+    <section class="form-card" aria-labelledby="formTitle">
+      <form id="leadForm" novalidate>
+        <h2 id="formTitle">See what you qualify for</h2>
+        <p class="sub">Fill this out and Matt's office will text you to set up a quick call.</p>
+        <div class="errors" id="errors" role="alert" tabindex="-1"></div>
+        <div class="row">
+          <label class="field">First name<input type="text" name="first_name" autocomplete="given-name" required maxlength="40"></label>
+          <label class="field">Last name<input type="text" name="last_name" autocomplete="family-name" required maxlength="60"></label>
+        </div>
+        <div class="row">
+          <label class="field">Mobile number<input type="tel" name="phone" autocomplete="tel-national" inputmode="tel" required maxlength="20"></label>
+          <label class="field">ZIP code<input type="text" name="zip" autocomplete="postal-code" inputmode="numeric" required maxlength="5"></label>
+        </div>
+        <label class="field">Email <span class="opt">(optional)</span><input type="email" name="email" autocomplete="email" maxlength="120"></label>
+        <fieldset>
+          <legend>What do you want to protect?</legend>
+          <label class="choice"><input type="radio" name="offer" value="living_benefits" checked><span><b>My mortgage and income</b>Coverage with living benefits for homeowners</span></label>
+          <label class="choice"><input type="radio" name="offer" value="final_expense"><span><b>Final expenses</b>Smaller coverage for funeral costs and final bills</span></label>
+        </fieldset>
+        <div class="hp" aria-hidden="true"><label>Company<input type="text" name="company" tabindex="-1" autocomplete="off"></label></div>
+        <label class="consent"><input type="checkbox" name="consent" required><span id="consentText">By checking this box, I agree that Beiling Agency and Matt Beiling, a licensed insurance agent, and his assistant may contact me about life insurance at the phone number I provided, including by text message and by calls that may use automated technology or an AI assistant. Consent is not a condition of any purchase. Message and data rates may apply. Reply STOP to opt out at any time.</span></label>
+        <button type="submit" id="submitBtn">Request my call</button>
+        <p class="privacy-note">Your information goes only to Matt's office. <a href="privacy.html">Privacy policy</a></p>
+      </form>
+      <div class="done" id="done" role="status" tabindex="-1">
+        <h2>Request received</h2>
+        <p id="doneMsg">Matt's assistant Chloe will text you shortly to find a good time for your call.</p>
+        <p class="sub">Requests that come in after 8:30 PM get a text at 8 AM. If you'd rather call now, the number is <a href="tel:+13306466704">330-646-6704</a>.</p>
+      </div>
+    </section>
+  </div>
+</header>
+
+<main>
+  <section class="section">
+    <div class="wrap">
+      <h2>What happens next</h2>
+      <ol class="steps">
+        <li><b>You send the form</b>It takes about a minute. Nothing is sold here.</li>
+        <li><b>Chloe texts you</b>Matt's assistant texts to find a time that works for a phone call.</li>
+        <li><b>Matt walks you through options</b>About 15 minutes on the phone. You see real prices from several carriers and decide if any fit.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section explain">
+    <div class="wrap explain-grid">
+      <div>
+        <h2>What "living benefits" means</h2>
+        <p>Most people think life insurance only pays when you die. Many policies today can also pay part of the benefit early if you're diagnosed with a qualifying critical, chronic or terminal illness, like a heart attack, stroke or cancer.</p>
+        <p>That money can go toward your mortgage, your bills, or anything else your family needs while you recover. What's covered and how much pays out depends on the carrier and the plan, and Matt will show you the details before you decide.</p>
+      </div>
+      <div>
+        <h2>About Matt</h2>
+        <div class="about">
+          <img src="matt-original.jpg?v=5" alt="Matt Beiling">
+          <div>
+            <p>I'm a licensed independent insurance agent based in Medina, Ohio. I help homeowners protect their mortgage and their family, and I work with several insurance carriers so I can compare options for you.</p>
+            <p>National Producer Number 20440165. <a href="https://nipr.com/licensing-center/look-up-a-national-producer-number" target="_blank" rel="noopener">Verify my license</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Matt Beiling, licensed insurance agent, Beiling Agency, Medina, Ohio. NPN 20440165. This page is for Ohio residents only.</p>
+    <p>This is a request for information, not an offer of coverage. Coverage, living benefit riders, prices and eligibility vary by carrier, product, age, health and state, and all policies are subject to underwriting. Not affiliated with any government agency or your mortgage lender.</p>
+    <p><a href="privacy.html">Privacy policy</a></p>
+  </div>
+</footer>
+
+<script>
+(() => {
+  const ENDPOINT = "https://icl-agent-api.onrender.com/v1/leads/web";
+  const CONSENT_VERSION = "oh-web-v1-2026-10-23";
+  const form = document.getElementById("leadForm"), btn = document.getElementById("submitBtn");
+  const box = document.getElementById("errors"), done = document.getElementById("done");
+  function showErrors(list) {
+    box.innerHTML = "<ul>" + list.map(e => "<li></li>").join("") + "</ul>";
+    box.querySelectorAll("li").forEach((li, i) => { li.textContent = list[i]; });
+    box.classList.add("on"); box.focus();
+  }
+  form.addEventListener("submit", async ev => {
+    ev.preventDefault();
+    const f = new FormData(form);
+    const data = {
+      first_name: (f.get("first_name") || "").trim(), last_name: (f.get("last_name") || "").trim(),
+      phone: (f.get("phone") || "").trim(), zip: (f.get("zip") || "").trim(), email: (f.get("email") || "").trim(),
+      offer: f.get("offer"), company: f.get("company") || "",
+      consent: form.consent.checked, consent_version: CONSENT_VERSION, page: location.href.split("#")[0]
+    };
+    const local = [];
+    if (!data.first_name) local.push("Enter your first name.");
+    if (!data.last_name) local.push("Enter your last name.");
+    if (data.phone.replace(/\D/g, "").length < 10) local.push("Enter a valid 10-digit mobile number.");
+    if (!/^4[345]\d{3}$/.test(data.zip)) local.push("Enter an Ohio ZIP code. We can only help Ohio residents right now.");
+    if (!data.consent) local.push("Check the box so Matt's office can contact you.");
+    if (local.length) return showErrors(local);
+    box.classList.remove("on"); btn.disabled = true; btn.textContent = "Sending...";
+    try {
+      const res = await fetch(ENDPOINT, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(data) });
+      const body = await res.json().catch(() => ({}));
+      if (res.ok && body.ok) {
+        form.style.display = "none";
+        document.getElementById("doneMsg").textContent = "Thanks, " + data.first_name + ". Matt's assistant Chloe will text you shortly to find a good time for your call.";
+        done.classList.add("on"); done.focus();
+        return;
+      }
+      showErrors(body.errors || [body.error || "That didn't go through. Please try again, or call 330-646-6704."]);
+    } catch {
+      showErrors(["That didn't go through. Check your connection and try again, or call 330-646-6704."]);
+    }
+    btn.disabled = false; btn.textContent = "Request my call";
+  });
+})();
+</script>
+</body>
+</html>
