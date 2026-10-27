@@ -28,7 +28,7 @@ Approved by Matt 2026-10-23. One article per weekly run. Quality over volume.
 ## Topic queue
 
 - [x] Mortgage protection insurance vs. PMI (2026-10-23, learn/mortgage-protection-vs-pmi.html)
-- [ ] What are living benefits on life insurance? Critical, chronic and terminal illness explained
+- [x] What are living benefits on life insurance? Critical, chronic and terminal illness explained (2026-10-27, learn/living-benefits-life-insurance.html)
 - [ ] How much life insurance do I need to cover my mortgage?
 - [ ] Do I need a medical exam to get life insurance?
 - [ ] Term life vs. mortgage protection: is there a difference?
@@ -47,3 +47,4 @@ When fewer than 4 topics remain, add new ones based on the questions homeowners 
 ## Log
 
 - 2026-10-23: Foundation added (canonical, Open Graph, InsuranceAgency data, sitemap, article section). First article published.
+- 2026-10-27: Published learn/living-benefits-life-insurance.html. Cross-linked with the PMI article; added to learn index, ohio.html and sitemap.
